@@ -1,15 +1,25 @@
-var pin = prompt("Pin: "),
-    name = prompt("name: "),
-    amount = prompt("bot amount: ");
-for (var i = 0; i < amount; i++) {
-  fetch('https://fb.blooket.com/c/firebase/join', {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json;charset=UTF-8"
-        },
-        body: JSON.stringify({
-            id: pin,
-            name: `${name}-${i}`,
-        })
-    });
-}
+let nameOfbot = prompt("Name of bots: ")
+let gameId = prompt("Enter Game Pin: ");
+let numberOfBots = prompt("How many Bots: ")
+let botsToJoin;
+
+for(botsToJoin = 0; botsToJoin < numberOfBots; botsToJoin++)
+
+fetch("https://fb.blooket.com/c/firebase/join", {
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "accept-language": "en-US,en;q=0.9",
+    "content-type": "application/json;charset=UTF-8",
+    "sec-ch-ua-mobile": "?0",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site"
+  },
+  "referrer": "https://www.blooket.com/",
+  "referrerPolicy": "strict-origin-when-cross-origin",
+  //adding vars to body for correct values
+  "body": "{\"id\":\"" + gameId+ "\",\"name\":\"" + nameOfbot + botsToJoin+ "\"}",
+  "method": "PUT",
+  "mode": "cors",
+  "credentials": "omit"
+});
