@@ -5,7 +5,7 @@ let botsToJoin;
 
 for(botsToJoin = 0; botsToJoin < numberOfBots; botsToJoin++)
 
-fetch("https://fb.blooket.com/c/firebase/join", {
+fetch("https://fb.blooket.com/c/firebase/join/id", {
   "headers": {
     "accept": "application/json, text/plain, */*",
     "accept-language": "en-US,en;q=0.9",
