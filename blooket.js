@@ -1,4 +1,3 @@
-alert("completely fixed by FromTheDarkness#6257")
 var pin = prompt("Pin: "),
     name = prompt("name: "),
     amount = prompt("bot amount: ");
